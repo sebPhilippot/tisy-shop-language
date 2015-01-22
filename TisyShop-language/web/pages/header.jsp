@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Chat</title>
+        <src type="text/javascript" src="js/angular.js"/>
+        <title>Bienvenue</title>
     </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+    
+    
 </html>

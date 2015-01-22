@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="UserActionForm" type="com.tisyshop.language.form.UserActionForm"/>
     
     </form-beans>
     
@@ -19,7 +20,8 @@
     </global-forwards>
 
     <action-mappings>
-        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        <action input="/" name="UserActionForm" path="/authentificationAction" scope="session" type="com.tisyshop.language.action.AuthentificationAction"/>
+        <action path="/Welcome" forward="/pages/welcomeStruts.jsp"/>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
