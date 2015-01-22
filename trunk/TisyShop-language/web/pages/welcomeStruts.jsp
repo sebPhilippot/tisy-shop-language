@@ -8,20 +8,14 @@
 <html:html lang="true">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><bean:message key="welcome.title"/></title>
+         <src type="text/javascript" src="../js/angular.js"/>
+        <title>Bienvenue</title>
         <html:base/>
     </head>
-    <body style="background-color: white">
-        
-        <logic:notPresent name="org.apache.struts.action.MESSAGE" scope="application">
-            <div  style="color: red">
-                ERROR:  Application resources not loaded -- check servlet container
-                logs for error messages.
-            </div>
-        </logic:notPresent>
-        
-        <h3><bean:message key="welcome.heading"/></h3>
-        <p><bean:message key="welcome.message"/></p>
-        
+    
+    <!--La directive 'ng-app' permet de signaler à angularJS de démarrer la compilation sur un élément ciblé--> 
+    <body>
+        Email: <input type="email" name="input"  required>
     </body>
+    
 </html:html>
