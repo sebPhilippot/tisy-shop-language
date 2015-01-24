@@ -6,9 +6,13 @@
 
 
 <struts-config>
-    <form-beans>
-        <form-bean name="UserActionForm" type="com.tisyshop.language.form.UserActionForm"/>
     
+    <form-beans>
+        <!--DynaForms-->
+        <form-bean name="UserActionForm" type="org.apache.struts.validator.DynaValidatorForm">
+            <form-property name="user" type="com.tisyshop.language.entity.User" />
+            
+        </form-bean>
     </form-beans>
     
     <global-exceptions>
@@ -23,12 +27,11 @@
         <action input="/" name="UserActionForm" path="/authentificationAction" scope="session" type="com.tisyshop.language.action.AuthentificationAction">
             <forward name="success" path="/pages/mainPage.jsp" redirect="false" />
         </action>
-        <action path="/Welcome" forward="/pages/welcomeStruts.jsp"/>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
 
-    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    <message-resources parameter="com.tisyshop.language.resource.MessageRessources"/>    
     
     <!-- ========================= Tiles plugin ===============================-->
     <!--

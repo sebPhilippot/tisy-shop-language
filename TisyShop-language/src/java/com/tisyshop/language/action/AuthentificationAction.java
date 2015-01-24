@@ -6,11 +6,13 @@
 
 package com.tisyshop.language.action;
 
+import com.tisyshop.language.entity.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.DynaActionForm;
 
 /**
  *
@@ -35,7 +37,10 @@ public class AuthentificationAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        System.out.println("coucou");
+        
+        DynaActionForm authentificationDynaForm=(DynaActionForm) form;
+        User user=(User) authentificationDynaForm.get("user");
+        System.out.println("USER : "+user.getUsername());
         return mapping.findForward(SUCCESS);
     }
 }
