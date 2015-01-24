@@ -20,7 +20,9 @@
     </global-forwards>
 
     <action-mappings>
-        <action input="/" name="UserActionForm" path="/authentificationAction" scope="session" type="com.tisyshop.language.action.AuthentificationAction"/>
+        <action input="/" name="UserActionForm" path="/authentificationAction" scope="session" type="com.tisyshop.language.action.AuthentificationAction">
+            <forward name="success" path="/pages/mainPage.jsp" redirect="false" />
+        </action>
         <action path="/Welcome" forward="/pages/welcomeStruts.jsp"/>
     </action-mappings>
     
