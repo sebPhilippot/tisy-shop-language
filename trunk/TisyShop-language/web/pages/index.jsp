@@ -20,12 +20,12 @@
         <html:form  action="/authentificationAction">
             
             <div class="form-group" />
-                <label  for="Pseudo">Pseudo</label>
-                <html:text property="username" styleId="Pseudo"/>
+            <label  for="Pseudo"><bean:message key="label.username"/></label>
+                <html:text property="user.username" styleId="Pseudo"/>
              </div>
                 
             <div class="form-group" />
-                <label  for="Parle">Je parle</label>
+                <label  for="Parle"><bean:message key="label.language"/></label>
                 <select name="selectParle" id="parle" >
                     <option>France</option>
                     <option>Anglais</option>
@@ -35,7 +35,7 @@
             </div>
             
             <div class="form-group" />
-                <label  for="Apprend">J'apprend</label>
+                <label  for="Apprend"><bean:message key="label.languageLearning"/></label>
                 <select name="selectApprend" id="Apprend">
                     <option>France</option>
                     <option>Anglais</option>
