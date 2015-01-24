@@ -35,7 +35,7 @@ public class AuthentificationAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
+        System.out.println("coucou");
         return mapping.findForward(SUCCESS);
     }
 }

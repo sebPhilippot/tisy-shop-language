@@ -17,11 +17,11 @@
 <body ng-app>
    
         <h1>[TisyShop-Language] Version de dev</h1>
-        <form  name="registerForm">
+        <html:form  action="/authentificationAction">
             
             <div class="form-group" />
                 <label  for="Pseudo">Pseudo</label>
-                <input id="Pseudo" type="pseudo"  name="Pseudo"  />
+                <html:text property="username" styleId="Pseudo"/>
              </div>
                 
             <div class="form-group" />
@@ -45,9 +45,9 @@
             </div>
             
             <div>
-               <input type="button" value="Entrer" id="btn" />
+                <html:submit property="submit" value="Entrer"/>
             </div>
-        </form>  
+        </html:form>  
 </body>
 
 </html:html>
