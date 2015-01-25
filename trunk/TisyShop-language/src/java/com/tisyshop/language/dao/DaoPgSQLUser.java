@@ -8,7 +8,9 @@ package com.tisyshop.language.dao;
 
 import com.tisyshop.language.entity.User;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
+
 
 /**
  *
@@ -18,8 +20,8 @@ public class DaoPgSQLUser implements DaoUser{
 
     @Override
     public void insert(User u) {
-       String req="INSERT INTO users(username,language, language_learning, user_ip)" +
-                                    "VALUES (?, ?, ?, ?, ?);";
+       String req="INSERT INTO users(username,language, language_learning, user_ip,date)" +
+                                    "VALUES (?, ?, ?, ?, ?,NOW());";
        
                 Connection cnx = null;
 		boolean autoCommitDefault=true;

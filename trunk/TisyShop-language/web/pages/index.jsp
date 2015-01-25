@@ -26,22 +26,22 @@
                 
             <div class="form-group" />
                 <label  for="Parle"><bean:message key="label.language"/></label>
-                <select name="selectParle" id="parle" >
+                <html:select property="user.language" >
                     <option>France</option>
                     <option>Anglais</option>
                     <option>Espagnol</option>
                     <option>Allemand</option>
-                </select>
+                </html:select>
             </div>
             
             <div class="form-group" />
                 <label  for="Apprend"><bean:message key="label.languageLearning"/></label>
-                <select name="selectApprend" id="Apprend">
+                <html:select property="user.language" >
                     <option>France</option>
                     <option>Anglais</option>
                     <option>Espagnol</option>
                     <option>Allemand</option>
-                </select>
+               </html:select>
             </div>
             
             <div>
