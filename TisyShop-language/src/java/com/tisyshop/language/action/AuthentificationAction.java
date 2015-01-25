@@ -6,6 +6,8 @@
 
 package com.tisyshop.language.action;
 
+import com.tisyshop.language.dao.DaoFactory;
+import com.tisyshop.language.dao.DaoUser;
 import com.tisyshop.language.entity.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,7 +42,13 @@ public class AuthentificationAction extends org.apache.struts.action.Action {
         
         DynaActionForm authentificationDynaForm=(DynaActionForm) form;
         User user=(User) authentificationDynaForm.get("user");
-        System.out.println("USER : "+user.getUsername());
+       
+        //Récupère l'adresse IP du client, lorsque celui-ci est derrière un proxy ce code récupère l'adresse du proxy
+        //CF. X-Forwarded-For (XFF)“. -http://www.mkyong.com/java/how-to-get-client-ip-address-in-java/-
+	String ipAddress = request.getRemoteAddr();  
+        user.setUserIP(ipAddress);
+        DaoUser dao=DaoFactory.createDAOTypeES();
+        dao.insert(user);
         return mapping.findForward(SUCCESS);
     }
 }
