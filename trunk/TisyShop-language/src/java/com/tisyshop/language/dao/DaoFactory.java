@@ -46,8 +46,7 @@ private static Connection getPostgreConnection()  throws Exception{
 	String url = "jdbc:postgresql://localhost:5433/tisyShop-language";
             try{
                     Class.forName(driver).newInstance();
-                   con = DriverManager.getConnection(url, "root", "TisyShop");
-                   // con = DriverManager.getConnection(url,"root","irghtdupain")  ;
+                    con = DriverManager.getConnection(url, "admin", "TisyShop");
                     System.out.println("Connection établie");
             }
             catch (IllegalAccessException e)

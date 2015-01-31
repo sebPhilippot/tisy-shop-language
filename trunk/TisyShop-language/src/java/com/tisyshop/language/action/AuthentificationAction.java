@@ -42,11 +42,12 @@ public class AuthentificationAction extends org.apache.struts.action.Action {
         
         DynaActionForm authentificationDynaForm=(DynaActionForm) form;
         User user=(User) authentificationDynaForm.get("user");
-       
+        
         //Récupère l'adresse IP du client, lorsque celui-ci est derrière un proxy ce code récupère l'adresse du proxy
         //CF. X-Forwarded-For (XFF)“. -http://www.mkyong.com/java/how-to-get-client-ip-address-in-java/-
 	String ipAddress = request.getRemoteAddr();  
         user.setUserIP(ipAddress);
+        user.setSessionID(request.getSession().getId());
         DaoUser dao=DaoFactory.createDAOTypeES();
         dao.insert(user);
         return mapping.findForward(SUCCESS);
