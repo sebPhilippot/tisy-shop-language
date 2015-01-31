@@ -14,5 +14,5 @@ import com.tisyshop.language.entity.User;
  */
 public interface DaoUser {
     public void insert(User u);
-    public void delete(User u);
+    public void delete(String session_id);
 }
